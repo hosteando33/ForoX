@@ -1,0 +1,64 @@
+
+html, body, #page {
+	background-color: lightgrey;
+height:93%;
+width: 99%;
+}
+#page{
+float: left;
+border: 2px solid red;
+}
+
+div#cabecera{
+float: left;
+width: 100%;
+border: 2px solid red;
+height: 60px;
+}	
+
+div#db-header{
+	float: left;
+	border: 2px solid blue;
+	height: 100%;
+	width: 48%;
+}
+	button#logo{
+		width: 100%;
+	}
+
+div#db-menu{
+	float: right;
+	border: 2px solid green;
+	height: 100%;
+	width: 48%
+}
+
+
+/**cuerpo*/
+div#cuerpo{
+height: 100%;
+width: 100%;
+float: left;
+border: 2px solid blue;
+}
+
+#sidebar, #contents {
+    height:100%;
+}
+
+#sidebar{
+	float: left;
+	width: 20%;
+}
+
+#contents{
+	border: 2px solid blue;
+	float: right;
+	width: 78%;
+}
+
+#sidebar iframe, #contents iframe {
+    height: 100%;
+    width: 100%;
+    border: none;
+}

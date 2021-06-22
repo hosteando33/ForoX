@@ -1,0 +1,31 @@
+body{
+	text-align: center;
+	background-color: lightgrey;
+}
+
+
+table{
+
+	border:1px solid black;
+	width: 80%;
+	/*float: right;*/
+}
+td{
+	border: 1px solid black;
+}
+.tabla_encabezado, .tabla_etiqueta, .tabla_pie{
+	font-size: small;
+}
+.tabla_texto{
+	color:brown;
+}
+
+textarea{
+	width: 96%;
+}
+#input_etiqueta{
+	width: 80%;
+}
+#input_autor{
+
+}

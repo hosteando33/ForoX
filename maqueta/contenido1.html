@@ -2,12 +2,42 @@
 <html>
 <head>
 	<title>Contenido-1</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/css_contenido.css">
 </head>
 <body>
 
 	PROBANDOOOO<br>
-
 	---------- contenido 1 --------
+
+
+<form method="POST" action="../private/comentar.php">
+	<table>
+		<tr class="tabla_encabezado">
+			<td>
+				autor:
+				<input id="input_autor" type="text" name="iautor" value="pedro">
+			</td>
+			<td colspan="2">
+				titulo:
+				<input id="input_titulo" type="text" name="ititulo">
+			</td>
+		</tr>
+		<tr class="tabla_etiqueta">
+			<td colspan="3">
+				etiquetas
+				<input id="input_etiqueta" type="text" name="ietiqueta">
+			</td>
+		</tr>
+		<tr class= "tabla_texto">
+			<td colspan="3"><textarea name="itexto"></textarea></td>
+		</tr>
+		<tr class="tabla_pie">
+			<td><input type="reset" value="borrar">	</td>
+			<td><input type="submit" value="compartir"></td>
+		</tr>
+	</table>
+</form>
 
 </body>
 </html>
