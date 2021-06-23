@@ -33,8 +33,28 @@ div#db-menu{
 	width: 48%
 }
 
+#menu_top, #menu_bot{
+	height: 50%;
+	text-align: center;
+}
+.menu_opt{
+	float: left;
+	width: 18%;
+	height: 100%;
+	border: 1px solid white;
+	box-shadow: 0px 5px 8px #888888;
+	margin-left: 1%;
+}
+.menu_opt:hover{
+	box-shadow: 0px 10px 10px 10px #ffdf79;
+		border: 3px solid brown;
+}
 
-/**cuerpo*/
+
+
+
+/**##################################*/
+/**############## cuerpo ############*/
 div#cuerpo{
 height: 100%;
 width: 100%;
