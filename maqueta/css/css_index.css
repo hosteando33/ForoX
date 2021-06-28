@@ -13,25 +13,37 @@ div#cabecera{
 float: left;
 width: 100%;
 border: 2px solid red;
-height: 60px;
+height: 50px;
 }	
 
 div#db-header{
 	float: left;
 	border: 2px solid blue;
 	height: 100%;
-	width: 48%;
+	width: 100px;
 }
 	button#logo{
 		width: 100%;
 	}
 
-div#db-menu{
+ol{
+	float: left;
+	diplay: inline;
+	white-space: nowrap;
+}
+div#cabecera > div{
+	float: left;
+	height: 100%;
+	border: 2px solid red;
+}
+
+
+/*div#db-menu{
 	float: right;
 	border: 2px solid green;
 	height: 100%;
 	width: 48%
-}
+}*/
 
 #menu_top, #menu_bot{
 	height: 50%;
