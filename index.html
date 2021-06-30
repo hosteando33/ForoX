@@ -4,6 +4,17 @@
 	<title>ProYecto[FORO]</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="maqueta/css/css_index.css">
+	<script src="maqueta/js/jquery-1.9.1.js"></script>
+
+
+<script>
+	function ver_login(){
+		$("div#login").toggle(500);
+	}
+</script>
+
+
+
 </head>
 <body>
 
@@ -31,30 +42,28 @@
 		</div>
 		
 		<div>
-			<button href="../identificacion.html">Identificacion</button>
+<!-- 			<a href="maqueta/login.html" target="content"><button>Identificacion</button></a> -->
+			<button onclick="ver_login();">Identificacion</button>
 			<button>Registro</button>
 		</div>
 
-<!-- 		<div id="db-menu">
-			<div id="menu_top">
-				menu
-			</div>
-			<div id="menu_bot">
-				<div>
-					<div class="menu_opt">a</div>
-					<div class="menu_opt">b</div>
-					<div class="menu_opt">c</div>
-				</div>
-				<div>
-					<div class="menu_opt">d</div>
-					<div class="menu_opt">e</div>
-				</div>
-			</div>
-		</div>
- -->
  	</div>
 
 
+<!---  #################################### -->
+<!---  #################################### -->
+<div id="login" style="display: none">
+	
+		<form action="../private/login.php" method="POST">
+		
+		<input type="email" name="iemail" placeholder="Escriba su mail"><br><br>
+		<input type="password" name="iclave" placeholder="Escriba su clave"><br><br>
+		<input type="submit" value="Enviar">
+
+	</form>
+</div>
+<!---  #################################### -->
+<!---  #################################### -->
 
 	<div id="cuerpo">
 		<div id="sidebar">
@@ -69,63 +78,9 @@
 
 
 
+
+
 </body>
 </html>
 
 
-
-<!--
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" id="frameset">
-	<head>
-		<title>API Documentation</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
-
-		<link rel="stylesheet" href="css/template.css" type="text/css"></link>
-
-		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-		<script type="text/javascript" src="js/jquery.tools.min.js"></script>
-		<script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script>
-		<script type="text/javascript" src="js/template.js"></script>
-	</head>
-
-		<body>
-			<table id="page">
-			<thead>
-				<tr>
-					<td colspan="2" id="db-header"><h1>API Documentation</h1></td>
-				</tr>
-				<tr>
-					<td colspan="2" id="db-menu">
-						<ul>
-							<li><a href="graph.html" target="content">Class Inheritance Diagram</a></li>
-							<li><a href="report_markers.html" target="content">Markers (TODO/FIXME)</a></li>
-							<li><a href="report_parse_markers.html" target="content">Parsing errors</a></li>
-							<li><a href="report_deprecated.html" target="content">Deprecated elements</a></li>
-						</ul>
-					</td>
-				</tr>
-			</thead>
-			<tfoot>
-				<tr>
-					<td colspan="2" id="db-footer"></td>
-				</tr>
-			</tfoot>
-			<tbody>
-				<tr>
-					<td id="sidebar">
-						<iframe name="nav" id="nav" src="nav.html"></iframe>
-					</td>
-					<td id="contents">
-						<iframe name="content" id="content" src="content.html"></iframe>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</body>
-</html>
-
-
--->
