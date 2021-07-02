@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TEORIA_BOTONES</title>
+</head>
+<body>
+
+<!-- ejemplo1 -->
+<!-- parece que no es la mejor opcion,
+ya que depende que este js activado -->
+<input type="button" onclick="window.location.href='https://donde.com';" value="Click me 1" /><br>
+
+
+<!-- ejemplo2 -->
+<form action="https://donde.com/" method="GET" target="_blank">
+	<button type="submit">Click me 2</button>
+</form><br>
+
+
+<!-- ejemplo3 -->
+<!-- formaction es HTML5, en viejos navegadores puede no funcionar.
+Es igual al ejemplo2, solo que el "action" se pone en el boton en lugar
+de en el form -->
+<form>
+	<button type="submit" formaction="https://donde.com">Click me 3</button>
+</form><br>
+
+
+<!-- ejemplo4 -->
+<!-- un link rodeando al boton :D -->
+<a href="http://donde.com"><button>Click me 4</button></a><br>
+
+
+
+<!-- ejemplo 5 -->
+<!-- hacer con CSS que un que un link parezca un boton. 
+	Es como el ejemplo4, pero con mas lio -->
+
+
+
+
+</body>
+</html>
