@@ -1,86 +1,82 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>ProYecto[FORO]</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="maqueta/css/css_index.css">
-	<script src="maqueta/js/jquery-1.9.1.js"></script>
+  <head>
+    <title>ProYecto[FORO]</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="maqueta/css/css_index.css" />
+    <script src="maqueta/js/jquery-1.9.1.js"></script>
 
+    <script>
+      function ver_login() {
+        $("div#login").toggle(500);
+      }
+    </script>
+  </head>
 
-<script>
-	function ver_login(){
-		$("div#login").toggle(500);
-	}
-</script>
+  <body>
+    <div id="page">
+      <div id="cabecera">
+        <div id="db-header">
+          <a href="private/mostrar.php" target="content">
+            <button id="logo"><h3>FOROX</h3></button>
+          </a>
+        </div>
+        <div>
+          <ol>
+            <li>menu1</li>
+            <li>menu2</li>
+          </ol>
+        </div>
+        <div>
+          <form>
+            <input type="text" name="" />
+            <input type="submit" name="" value="buscar" />
+          </form>
+        </div>
 
+        <div>
+			<!-- boton identificacion -->
+          <button onclick="ver_login();">Identificacion</button>
+		  <!-- boton registro -->
+          <a href="maqueta/registro.html" target="content">
+            <button>Registro</button>
+          </a>
+        </div>
+      </div>
 
+      <!---  #################################### -->
+      <!---  #################################### -->
+      <div id="login" style="display: none">
+        <form action="../private/login.php" method="POST">
+          <input
+            type="email"
+            name="iemail"
+            placeholder="Escriba su mail"
+          /><br /><br />
+          <input
+            type="password"
+            name="iclave"
+            placeholder="Escriba su clave"
+          /><br /><br />
+          <input type="submit" value="Enviar" />
+        </form>
+      </div>
+      <!---  #################################### -->
+      <!---  #################################### -->
 
-</head>
-<body>
-
-
-
-<div id="page">
-
-	<div id="cabecera">
-		<div id="db-header">			
-			<a href="private/mostrar.php" target="content">
-				<button id="logo"><h3>FOROX</h3></button>
-			</a>
-		</div>
-		<div>
-			<ol>
-				<li>menu1</li>
-				<li>menu2</li>
-			</ol>
-		</div>
-		<div>
-			<form>
-				<input type="text" name="">
-				<input type="submit" name="" value="hola">
-			</form>	
-		</div>
-		
-		<div>
-<!-- 			<a href="maqueta/login.html" target="content"><button>Identificacion</button></a> -->
-			<button onclick="ver_login();">Identificacion</button>
-			<button>Registro</button>
-		</div>
-
- 	</div>
-
-
-<!---  #################################### -->
-<!---  #################################### -->
-<div id="login" style="display: none">
-	
-		<form action="../private/login.php" method="POST">
-		
-		<input type="email" name="iemail" placeholder="Escriba su mail"><br><br>
-		<input type="password" name="iclave" placeholder="Escriba su clave"><br><br>
-		<input type="submit" value="Enviar">
-
-	</form>
-</div>
-<!---  #################################### -->
-<!---  #################################### -->
-
-	<div id="cuerpo">
-		<div id="sidebar">
-			<iframe name="nav" id="nav" src="maqueta/navegacion.html"></iframe>
-		</div>
-		<div id="contents">
-			<iframe name="content" id="content" src="private/mostrar.php"></iframe>
-		</div>
-	</div>
-	<div id="db-footer">pie</div>
-</div>
-
-
-
-
-
-</body>
+      <div id="cuerpo">
+        <div id="sidebar">
+          <iframe name="nav" id="nav" src="maqueta/navegacion.html"></iframe>
+        </div>
+        <div id="contents">
+          <iframe
+            name="content"
+            id="content"
+            src="private/mostrar.php"
+          ></iframe>
+        </div>
+      </div>
+      <div id="db-footer">pie</div>
+    </div>
+  </body>
 </html>
-
-
