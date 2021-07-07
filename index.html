@@ -3,18 +3,17 @@
   <head>
     <title>ProYecto[FORO]</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="maqueta/css/css_index.css" />
+    <link rel="stylesheet" type="text/css" href="maqueta/css/css_index.css"/>
     <script src="maqueta/js/jquery-1.9.1.js"></script>
-
-    <script>
-      function ver_login() {
-        $("div#login").toggle(500);
-      }
-    </script>
   </head>
-
+<!-- head  -->
+<!-- ####################################################### -->
+<!-- ####################################################### -->
+<!-- body  -->
   <body>
     <div id="page">
+      <!-- ################## cabecera #################### -->
+      <!-- ################################################ -->
       <div id="cabecera">
         <div id="db-header">
           <a href="private/mostrar.php" target="content">
@@ -33,37 +32,26 @@
             <input type="submit" name="" value="buscar" />
           </form>
         </div>
-
         <div>
-			<!-- boton identificacion -->
-          <button onclick="ver_login();">Identificacion</button>
-		  <!-- boton registro -->
-          <a href="maqueta/registro.html" target="content">
+		  	  <!-- boton identificacion -->
+          <a 
+            href="maqueta/login.html" 
+            target="content" 
+            style="text-decoration:none">
+            <button>Login</button>
+          </a>         
+          &nbsp;&nbsp;&nbsp;&nbsp;
+		      <!-- boton registro -->
+          <a 
+            href="maqueta/registro.html" 
+            target="content"
+            style="text-decoration:none">
             <button>Registro</button>
           </a>
         </div>
       </div>
-
-      <!---  #################################### -->
-      <!---  #################################### -->
-      <div id="login" style="display: none">
-        <form action="../private/login.php" method="POST">
-          <input
-            type="email"
-            name="iemail"
-            placeholder="Escriba su mail"
-          /><br /><br />
-          <input
-            type="password"
-            name="iclave"
-            placeholder="Escriba su clave"
-          /><br /><br />
-          <input type="submit" value="Enviar" />
-        </form>
-      </div>
-      <!---  #################################### -->
-      <!---  #################################### -->
-
+      <!-- ################## cuerpo ###################### -->
+      <!-- ################################################ -->
       <div id="cuerpo">
         <div id="sidebar">
           <iframe name="nav" id="nav" src="maqueta/navegacion.html"></iframe>
@@ -76,6 +64,8 @@
           ></iframe>
         </div>
       </div>
+      <!-- ################## pie ######################### -->
+      <!-- ################################################ -->      
       <div id="db-footer">pie</div>
     </div>
   </body>

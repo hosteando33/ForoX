@@ -3,8 +3,8 @@
 
 include("conexion_foro.php");
 
-$email= $_POST["iemail"];
-$clave =$_POST["iclave"];
+$email= 	$_POST["iemail"];
+$clave =	$_POST["iclave"];
 
 
 
@@ -31,12 +31,6 @@ if($registro= $tabla->fetch_array()){
 }else{
 	echo "no existes";
 }
-
-
-
-
-
-
 
 
 

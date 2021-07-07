@@ -6,8 +6,9 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="" />
-    <script src="js\jquery-1.9.1.js"></script>
+    <script src="js/jquery-1.9.1.js"></script>
   </head>
+
   <body>
     <script>
       $(document).ready(function () {
@@ -32,15 +33,57 @@
           name="apellido_usuario"
           placeholder="Escriba su apellido"
         /><br /><br />
-        <input
+
+
+<!-- ################################################## -->
+        <!-- Amos a probar algo nuevoo!!!! _D -->
+        <!-- VAmos a crear un selector, que nos permita seleccionar el centro -->
+        <!-- suponiendo, que tengamos una base de datos con todos los centros -->
+        <select id="registro_insti" name="id_instituto">
+          <option>centro...</option>
+        </select>
+        <!-- Si la pagina fuese una PHP -dinamica- no habria mucha dificultad pero.. -->
+        <!-- Como la pagina es un HTML -estatico-, vamos a necesitar un 
+        script que nos comunique con un archivo PHP para hacer la consulta
+        de centros disponibles guardados en la base de datos.  -->
+        <script type="text/javascript">
+          $.post(
+              "../private/busca_insti.php",
+              {},
+              function(retorno){
+                $("#registro_insti").append(retorno);
+              }
+            );
+        </script>
+
+        <!-- explicacion del script :D -->
+        <!-- Pues: realizamos un post:
+                "a este archivo",
+                {le pasamos estas variables (en nuestro caso nada)},
+                 y hacemos algo con lo que nos devuelve function(retorno){}
+          -->
+
+
+
+
+
+
+
+<!--    <input
           type="text"
           name="id_instituto"
           placeholder="Escriba su id_instituto"
-        /><br /><br />
+        />
+ -->
+        <br /><br />
+<!-- ################################################## -->
+
+
+
         <input
           type="email"
           name="iemail"
-          placeholder="Escriba su mail"
+          placeholder="Escriba su e-mail"
         /><br /><br />
         <input
           type="password"
@@ -52,7 +95,6 @@
           name="iclave_repetida"
           placeholder="Repita la clave"
         /><br /><br />
-        <script type="text/javascript"></script>
         <input type="submit" value="Enviar" />
       </form>
     </div>
