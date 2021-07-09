@@ -24,7 +24,7 @@
     <script>
       $(function () {
         $("#submits").attr("disabled", true);
-        $("#iclave_repetida").change(function () {
+        $("input").mouseleave(function () {
           if (
             $("#id_usuario_nuevo").val() != "" &&
             $("#apellido_usuario").val() != "" &&
@@ -45,7 +45,7 @@
         <input
           type="text"
           name="id_usuario_nuevo"
-          placeholder="Escriba su nombre"
+          placeholder="Escriba su nombre, hombre"
           id="id_usuario_nuevo"
         /><br /><br />
         <input
