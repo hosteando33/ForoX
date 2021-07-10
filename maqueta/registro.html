@@ -37,6 +37,28 @@
             $("#submits").attr("disabled", true);
           }
         });
+        $("input").mouseenter(function () {
+          if (
+            $("#id_usuario_nuevo").val() != "" &&
+            $("#apellido_usuario").val() != "" &&
+            $("#registro_insti").val() != "Centro" &&
+            $("#iemail").val() != "" &&
+            $("#iclave").val() != "" &&
+            $("#iclave_repetida").val() != ""
+          ) {
+            $("#submits").attr("disabled", false);
+          } else {
+            $("#submits").attr("disabled", true);
+          }
+        });
+        $("#submits").click(function () {
+          if ($("#iclave").val() == $("#iclave_repetida").val()) {
+            $("#submits").prop("disabled", false); //use prop()
+          } else {
+            $("#submits").prop("disabled", true); //use prop()
+            alert("Las claves no coinciden");
+          }
+        });
       });
     </script>
 
@@ -45,7 +67,7 @@
         <input
           type="text"
           name="id_usuario_nuevo"
-          placeholder="Escriba su nombre, hombre"
+          placeholder="Escriba su nombre1"
           id="id_usuario_nuevo"
         /><br /><br />
         <input
@@ -60,7 +82,7 @@
         <!-- VAmos a crear un selector, que nos permita seleccionar el centro -->
         <!-- suponiendo, que tengamos una base de datos con todos los centros -->
         <select id="registro_insti" name="id_instituto">
-          <option>centro...</option>
+          <option>Centro</option>
         </select>
         <!-- Si la pagina fuese una PHP -dinamica- no habria mucha dificultad pero.. -->
         <!-- Como la pagina es un HTML -estatico-, vamos a necesitar un 
@@ -106,7 +128,7 @@
           id="iclave_repetida"
           placeholder="Repita la clave"
         /><br /><br />
-        <input type="submit" value="Enviar" id="submits"/>
+        <input type="submit" value="Enviar" id="submits" />
       </form>
     </div>
   </body>
