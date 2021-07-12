@@ -11,5 +11,6 @@ foreach ($institutos as $insti) {
 	echo"<option value='".$insti["id_instituto"]."'>".$insti["nombre_instituto"]."</option>";
 }
 
+$conexion->close();
 
 ?>
