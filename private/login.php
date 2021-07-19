@@ -18,20 +18,16 @@ $tabla = $conexion->query($comprobar_usuario);
 
 if($registro= $tabla->fetch_array()){
 	
+	// echo"<script>
+	// 	alert('hola ".$registro["nombre_usuario"]."');
+	// </script>";
+
+
 	session_start();
 
-	$_SESSION["id_usuario"]= 		$registro["id_usuario"];
-	$_SESSION["nombre_usuario"]=	$registro["nombre_usuario"];
 
-	// header("url: /private/zona_usuario.php");
-	echo"
-	<script>
-		top.location.href='zona_usuario.php';
-	</script>
-	";
-
-	echo"bieen";
-
+	$_SESSION["id_usuario"]= $usuario["id_usuario"];
+	header("location:mostrar.php");
 }else{
 	echo "no existes";
 }
