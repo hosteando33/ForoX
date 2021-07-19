@@ -1,12 +1,25 @@
+<?php
+//copio y pego la pagina de inicio completa
+// pero la convierto en php para poder gestionar la zona
+// de usuario
+
+session_start();
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
   <head>
     <title>ProYecto[FORO]</title>
     <meta charset="utf-8" />
     <!-- <link rel="stylesheet" type="text/css" href="maqueta/css/css_index.css"/> -->
-    <link rel="stylesheet" type="text/css" href="maqueta/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="maqueta/css/index_bootstrap.css">
-    <script src="maqueta/js/jquery-1.9.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="../maqueta/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../maqueta/css/index_bootstrap.css">
+    <script src="../maqueta/js/jquery-1.9.1.js"></script>
   </head>
 <!-- head  -->
 <!-- ####################################################### -->
@@ -48,15 +61,16 @@
 
         <!-- ZONA LOGIN/REGISTRO -->
         <div class="col">
-          <a href="maqueta/login.html" 
+          <a href="zona de usuario aun por hacer :D" 
               target="content" 
               style="text-decoration:none">
-            <button>Login</button>
+            <button>
+              <?php  echo "[".$_SESSION["nombre_usuario"]."]"; ?>
+            </button>
           </a>         
-          <a href="maqueta/registro.html" 
-              target="content"
+          <a href="log_out.php" 
               style="text-decoration:none">
-            <button>Registro</button>
+            <button>Log-out</button>
           </a>
         </div>
       </div>
@@ -74,7 +88,7 @@
           <iframe
             name="content"
             id="content"
-            src="private/mostrar.php">
+            src="mostrar.php">
           </iframe>
         </div>
       </div>
@@ -92,7 +106,7 @@
     </div>  <!-- fin PAGE-->
 
 
-    <script src="maqueta/js/bootstrap.bundle.min.js">
+    <script src="../maqueta/js/bootstrap.bundle.min.js">
       
     </script>
   </body>
