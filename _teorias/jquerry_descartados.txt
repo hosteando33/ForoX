@@ -1,0 +1,51 @@
+<!-- <script>
+      $(document).ready(function () {
+        $(':input[type="submit"]').prop("disabled", true);
+        $('input[type="text"]').keyup(function () {
+          if ($(this).val() != "") {
+            $(':input[type="submit"]').prop("disabled", false);
+          }
+        });
+      });
+    </script> -->
+
+    <!-- <script>
+      $(function () {
+        $("#submits").attr("disabled", true);
+        $("input").mouseleave(function () {
+          if (
+            $("#id_usuario_nuevo").val() != "" &&
+            $("#apellido_usuario").val() != "" &&
+            $("#iemail").val() != "" &&
+            $("#iclave").val() != "" &&
+            $("#iclave_repetida").val() != ""
+          ) {
+            $("#submits").attr("disabled", false);
+          } else {
+            $("#submits").attr("disabled", true);
+          }
+        });
+        $("input").mouseenter(function () {
+          if (
+            $("#id_usuario_nuevo").val() != "" &&
+            $("#apellido_usuario").val() != "" &&
+            $("#registro_insti").val() != "Centro" &&
+            $("#iemail").val() != "" &&
+            $("#iclave").val() != "" &&
+            $("#iclave_repetida").val() != ""
+          ) {
+            $("#submits").attr("disabled", false);
+          } else {
+            $("#submits").attr("disabled", true);
+          }
+        });
+        $("#submits").click(function () {
+          if ($("#iclave").val() == $("#iclave_repetida").val()) {
+            $("#submits").prop("disabled", false); //use prop()
+          } else {
+            $("#submits").prop("disabled", true); //use prop()
+            alert("Las claves no coinciden");
+          }
+        });
+      });
+    </script> -->

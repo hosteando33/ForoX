@@ -6,26 +6,54 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
     <script src="js/jquery-1.9.1.js"></script>
   </head>
 
   <body>
-    
+
+    <!-- Nuevo script para confirmar la coincidencia de claves y añadido required a los input del form -->
+
+    <script>
+      $("#iclave").onchange(function () {
+        let clave_repe = $("#iclave_repetida")[0];
+        if ($("#iclave").val() != $("#iclave_repetida").val()) {
+          clave_repe.setCustomValidity("Las claves no coinciden");
+        } else {
+          iclave_repetida.setCustomValidity("");
+        }
+      });
+
+      $("#iclave_repetida").onkeyup(function () {
+        let clave_repe = $("#iclave_repetida")[0];
+        if ($("#iclave").val() != $("#iclave_repetida").val()) {
+          clave_repe.setCustomValidity("Las claves no coinciden");
+        } else {
+          iclave_repetida.setCustomValidity("");
+        }
+      });
+    </script>
 
     <div id="registro">
       <form action="../private/registro.php" method="POST">
         <input
           type="text"
           name="id_usuario_nuevo"
-          placeholder="Escriba su nombre1"
+          placeholder="Escriba su nombre"
           id="id_usuario_nuevo"
+          required
         /><br /><br />
         <input
           type="text"
           name="apellido_usuario"
           id="apellido_usuario"
           placeholder="Escriba su apellido"
+          required
         /><br /><br />
 
         <!-- ################################################## -->
@@ -66,22 +94,30 @@
           name="iemail"
           id="iemail"
           placeholder="Escriba su e-mail"
+          required
         /><br /><br />
         <input
           type="password"
           name="iclave"
           id="iclave"
           placeholder="Escriba su clave"
+          required
         /><br /><br />
         <input
           type="password"
           name="iclave_repetida"
           id="iclave_repetida"
-          placeholder="Repita la clave"
+          placeholder="Repita la clave1"
+          required
         /><br /><br />
+
         <input type="submit" value="Enviar" id="submits" />
       </form>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
