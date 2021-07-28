@@ -16,10 +16,9 @@
   </head>
 
   <body>
-
     <!-- Nuevo script para confirmar la coincidencia de claves y añadido required a los input del form -->
 
-    <script>
+    <!-- <script>
       $("#iclave").onchange(function () {
         let clave_repe = $("#iclave_repetida")[0];
         if ($("#iclave").val() != $("#iclave_repetida").val()) {
@@ -37,6 +36,37 @@
           iclave_repetida.setCustomValidity("");
         }
       });
+    </script> -->
+
+    <script>
+      $(function () {
+
+        // Modificación de los mensajes de error
+
+        $(".texto").attr(
+          "oninvalid",
+          "this.setCustomValidity('Por favor, rellene este campo')"
+        );
+
+        $(".texto").attr("oninput", "this.setCustomValidity('')");
+
+        $("[type='password']").attr(
+          "oninvalid",
+          "this.setCustomValidity('Por favor, introduzca una contraseña')"
+        );
+
+        $("[type='password']").attr("oninput", "this.setCustomValidity('')");
+
+        // Confirmacion de clave
+        $("#submits").click(function () {
+          let clave_repe = $("#iclave_repetida")[0];
+          if ($("#iclave").val() == $("#iclave_repetida").val()) {
+            clave_repe.setCustomValidity("");
+          } else {
+            clave_repe.setCustomValidity("Las claves no coinciden");
+          }
+        });
+      });
     </script>
 
     <div id="registro">
@@ -46,12 +76,14 @@
           name="id_usuario_nuevo"
           placeholder="Escriba su nombre"
           id="id_usuario_nuevo"
+          class="texto"
           required
         /><br /><br />
         <input
           type="text"
           name="apellido_usuario"
           id="apellido_usuario"
+          class="texto"
           placeholder="Escriba su apellido"
           required
         /><br /><br />
@@ -93,6 +125,7 @@
           type="email"
           name="iemail"
           id="iemail"
+          class="texto"
           placeholder="Escriba su e-mail"
           required
         /><br /><br />
