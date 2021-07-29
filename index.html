@@ -4,22 +4,21 @@
     <title>ProYecto[FORO]</title>
     <meta charset="utf-8" />
     <!-- <link rel="stylesheet" type="text/css" href="maqueta/css/css_index.css"/> -->
-    <link rel="stylesheet" type="text/css" href="maqueta/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="maqueta/css/index_bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="maqueta/css/bootstrap.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="maqueta/css/index_bootstrap.css"
+    />
     <script src="maqueta/js/jquery-1.9.1.js"></script>
   </head>
-<!-- head  -->
-<!-- ####################################################### -->
+  <!-- head  -->
+  <!-- ####################################################### -->
 
-
-
-
-<!-- ####################################################### -->
-<!-- body  -->
+  <!-- ####################################################### -->
+  <!-- body  -->
   <body>
-
     <div id="page" class="container-fluid">
-
       <!-- ################## cabecera #################### -->
       <!-- ################################################ -->
       <div id="cabecera" class="row">
@@ -41,59 +40,61 @@
         <!-- ZONA FILTRO/BUSQUEDA -->
         <div class="col-6">
           <form>
-            <input type="text" name="" placeholder="Etiquetas"/>
+            <select id="nombre_asignatura" name="id_asignatura">
+              <option>Asignaturas</option>
+            </select>
+            <br /><br />
             <input type="submit" name="" value="buscar" />
           </form>
         </div>
 
+        <script type="text/javascript">
+          $.post(
+            "../private/buscador_de_comentarios.php",
+            {},
+            function (retorno) {
+              $("#nombre_asignatura").append(retorno);
+            }
+          );
+        </script>
+
         <!-- ZONA LOGIN/REGISTRO -->
         <div class="col">
-          <a href="maqueta/login.html" 
-              target="content" 
-              style="text-decoration:none">
+          <a
+            href="maqueta/login.html"
+            target="content"
+            style="text-decoration: none"
+          >
             <button>Login</button>
-          </a>         
-          <a href="maqueta/registro.html" 
-              target="content"
-              style="text-decoration:none">
+          </a>
+          <a
+            href="maqueta/registro.html"
+            target="content"
+            style="text-decoration: none"
+          >
             <button>Registro</button>
           </a>
         </div>
       </div>
 
-
-
-
       <!-- ################## cuerpo ###################### -->
       <!-- ################################################ -->
       <div id="cuerpo" class="container-fluid">
-<!--         <div id="sidebar">
+        <!--         <div id="sidebar">
           <iframe name="nav" id="nav" src="maqueta/navegacion.html"></iframe>
         </div> -->
         <div id="contents" class="row">
-          <iframe
-            name="content"
-            id="content"
-            src="private/mostrar.php">
+          <iframe name="content" id="content" src="private/mostrar.php">
           </iframe>
         </div>
       </div>
 
-
-
-
-
       <!-- ################## pie ######################### -->
-      <!-- ################################################ -->      
-      <div id="pie" >
-        pie
-      </div>
+      <!-- ################################################ -->
+      <div id="pie">pie</div>
+    </div>
+    <!-- fin PAGE-->
 
-    </div>  <!-- fin PAGE-->
-
-
-    <script src="maqueta/js/bootstrap.bundle.min.js">
-      
-    </script>
+    <script src="maqueta/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
