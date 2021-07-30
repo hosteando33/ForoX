@@ -39,24 +39,21 @@
 
         <!-- ZONA FILTRO/BUSQUEDA -->
         <div class="col-6">
-          <form>
+          <form action="" method="POST">
             <select id="nombre_asignatura" name="id_asignatura">
               <option>Asignaturas</option>
             </select>
+
+            <script type="text/javascript">
+              $.post("private\buscador_de_comentarios.php", {}, function (retorno) {
+                $("#nombre_asignatura").append(retorno);
+              });
+            </script>
+
             <br /><br />
             <input type="submit" name="" value="buscar" />
           </form>
         </div>
-
-        <script type="text/javascript">
-          $.post(
-            "../private/buscador_de_comentarios.php",
-            {},
-            function (retorno) {
-              $("#nombre_asignatura").append(retorno);
-            }
-          );
-        </script>
 
         <!-- ZONA LOGIN/REGISTRO -->
         <div class="col">
