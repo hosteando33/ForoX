@@ -12,15 +12,13 @@
     />
     <script src="maqueta/js/jquery-1.9.1.js"></script>
   </head>
-  <!-- head  -->
-  <!-- ####################################################### -->
 
-  <!-- ####################################################### -->
-  <!-- body  -->
+
+
   <body>
     <div id="page" class="container-fluid">
       <!-- ################## cabecera #################### -->
-      <!-- ################################################ -->
+
       <div id="cabecera" class="row">
         <!-- ZONA LOGO -->
         <div class="col">
@@ -31,8 +29,18 @@
 
         <!-- ZONA MENUS?? -->
         <div class="col">
-          <ol>
-            <li>menu1</li>
+          <ol style= "list-style-type: none" >
+            <li>
+              <!-- Crear comentario -->
+
+              <a
+                href="private/nueva_pregunta.php"
+                target="content"
+                style="text-decoration: none"
+              >
+                <button>Haz una pregunta</button>
+              </a>
+            </li>
             <li>menu2</li>
           </ol>
         </div>
@@ -45,9 +53,13 @@
             </select>
 
             <script type="text/javascript">
-              $.post("private/buscador_de_comentarios.php", {}, function (retorno) {
-                $("#nombre_asignatura").append(retorno);
-              });
+              $.post(
+                "private/buscador_de_comentarios.php",
+                {},
+                function (retorno) {
+                  $("#nombre_asignatura").append(retorno);
+                }
+              );
             </script>
 
             <br /><br />

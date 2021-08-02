@@ -44,7 +44,7 @@ foreach($filas as $fila){
 ?>
 
 
-<form method="POST" action="comentar.php">
+<!-- <form method="POST" action="comentar.php">
 	<table>
 		<tr class="tabla_encabezado">
 			<td>
@@ -73,4 +73,4 @@ foreach($filas as $fila){
 </form>
 
 </body>
-</html>
+</html> -->
