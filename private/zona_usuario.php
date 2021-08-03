@@ -45,16 +45,40 @@ session_start();
 
         <!-- ZONA MENUS?? -->
         <div class="col">
-          <ol>
-            <li>menu1</li>
+          <ol style= "list-style-type: none" >
+            <li>
+              <!-- Crear comentario -->
+
+              <a
+                href="nueva_pregunta.php"
+                target="content"
+                style="text-decoration: none"
+              >
+                <button>Haz una pregunta</button>
+              </a>
+            </li>
             <li>menu2</li>
           </ol>
         </div>
 
         <!-- ZONA FILTRO/BUSQUEDA -->
         <div class="col-6">
-          <form>
-            <input type="text" name="" placeholder="Etiquetas"/>
+          <form action="" method="POST">
+            <select id="nombre_asignatura" name="id_asignatura">
+              <option>Asignaturas</option>
+            </select>
+
+            <script type="text/javascript">
+              $.post(
+                "private/buscador_de_comentarios.php",
+                {},
+                function (retorno) {
+                  $("#nombre_asignatura").append(retorno);
+                }
+              );
+            </script>
+
+            <br /><br />
             <input type="submit" name="" value="buscar" />
           </form>
         </div>

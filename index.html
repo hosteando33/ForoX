@@ -33,13 +33,14 @@
             <li>
               <!-- Crear comentario -->
 
-              <a
+              <!-- <a
                 href="private/nueva_pregunta.php"
                 target="content"
                 style="text-decoration: none"
               >
                 <button>Haz una pregunta</button>
-              </a>
+              </a> -->
+              menu1
             </li>
             <li>menu2</li>
           </ol>
@@ -54,7 +55,7 @@
 
             <script type="text/javascript">
               $.post(
-                "private/buscador_de_comentarios.php",
+                "buscador_de_comentarios.php",
                 {},
                 function (retorno) {
                   $("#nombre_asignatura").append(retorno);

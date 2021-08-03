@@ -11,7 +11,7 @@
 
 
 
-	<form method="POST" action="comentar.php">
+	<form method="POST" action="preguntar_BBDD.php">
 		<table>
 			<tr class="tabla_encabezado">
 				<td>
@@ -26,7 +26,7 @@
 			<tr class="tabla_etiqueta">
 				<td colspan="3">
 					etiquetas
-					<select id="input_etiqueta" name="ietiqueta">
+					<select id="input_etiqueta" name="iasignatura">
 						<option>Asignaturas</option>
 					</select>
 
