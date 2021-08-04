@@ -13,7 +13,7 @@
 */
 $autor= 	$_POST["iautor"];
 $titulo= 	$_POST["ititulo"];
-$asignatura= $_POST["iasignatura"] ?? "";
+$asignatura= $_POST["iasignatura"];
 $texto=		$_POST["itexto"];
 $fecha=		date("Y-m-d");
 
@@ -38,9 +38,10 @@ $sql_id_comentario = $conexion->query("SELECT LAST_INSERT_ID()");
 
 $sql_id_asignatura = $conexion->query("SELECT id_asignatura FROM asiganturas WHERE nombre_asignatura = '$asignatura'");
 
+$result_id_asignatura = $sql_id_asignatura->fetch_array()[0];
 
 $sql_comentarios_asignaturas="INSERT INTO comentarios_asignaturas(id_comentario, id_asinatura)
-						VALUES('$sql_id_comentario', '$sql_id_asignatura')";
+						VALUES('$sql_id_comentario', '$result_id_asignatura')";
 
 
 /**
