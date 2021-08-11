@@ -28,16 +28,15 @@
 					etiquetas
 					<select id="input_etiqueta" name="iasignatura">
 						<option>Asignaturas</option>
+						<script type="text/javascript">
+							$.post(
+								"buscador_de_comentarios.php", {},
+								function(retorno) {
+									$("#input_etiqueta").append(retorno);
+								}
+							);
+						</script>
 					</select>
-
-					<script type="text/javascript">
-						$.post(
-							"buscador_de_comentarios.php", {},
-							function(retorno) {
-								$("#input_etiqueta").append(retorno);
-							}
-						);
-					</script>
 					<!-- <input id="input_etiqueta" type="text" name="ietiqueta"> -->
 				</td>
 			</tr>

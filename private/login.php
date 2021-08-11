@@ -16,12 +16,12 @@ $tabla = $conexion->query($comprobar_usuario);
 
 // print_r($registro);
 
-if($registro= $tabla->fetch_array()){
+if($registro = $tabla->fetch_array()){
 	
 	session_start();
 
-	$_SESSION["id_usuario"]= 		$registro["id_usuario"];
-	$_SESSION["nombre_usuario"]=	$registro["nombre_usuario"];
+	$_SESSION["id_usuario"] = 		$registro["id_usuario"];
+	$_SESSION["nombre_usuario"] =	$registro["nombre_usuario"];
 
 	// header("url: /private/zona_usuario.php");
 	echo"

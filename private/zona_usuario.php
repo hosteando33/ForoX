@@ -38,7 +38,7 @@ session_start();
       <div id="cabecera" class="row">
         <!-- ZONA LOGO -->
         <div class="col">
-          <a href="private/mostrar.php" target="content">
+          <a href="mostrar.php" target="content">
             <button id="logo"><h3>FOROX</h3></button>
           </a>
         </div>

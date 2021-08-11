@@ -17,9 +17,9 @@ $asignatura= $_POST["iasignatura"];
 $texto=		$_POST["itexto"];
 $fecha=		date("Y-m-d");
 
-//Trampeamos el id del autor.habria que buscar en la bd.
-$id_autor= "1";
-
+//Iniciamos sesion y recuperamos la id del usuario activo
+session_start();
+$id_autor= $_SESSION["id_usuario"];
 
 
 /**
@@ -34,20 +34,26 @@ include("conexion_foro.php");
 $sql_comentarios="INSERT INTO comentarios(id_usuario, titulo_comentario, texto_comentario, fecha_comentario) 
 						VALUES('$id_autor','$titulo','$texto','$fecha')";
 
-$sql_id_comentario = $conexion->query("SELECT LAST_INSERT_ID()");
+$conexion->query($sql_comentarios);
 
-$sql_id_asignatura = $conexion->query("SELECT id_asignatura FROM asiganturas WHERE nombre_asignatura = '$asignatura'");
+// $sql_id_comentario = $conexion->query("SELECT LAST_INSERT_ID()");
+$sql_id_comentario = $conexion->insert_id;
 
-$result_id_asignatura = $sql_id_asignatura->fetch_array()[0];
+// print_r($sql_id_comentario);
 
-$sql_comentarios_asignaturas="INSERT INTO comentarios_asignaturas(id_comentario, id_asinatura)
-						VALUES('$sql_id_comentario', '$result_id_asignatura')";
+// $sql_id_asignatura = $conexion->query("SELECT id_asignatura FROM asiganturas WHERE nombre_asignatura = '$asignatura'");
 
+// $result_id_asignatura = $sql_id_asignatura->fetch_array();
+
+$sql_comentarios_asignaturas="INSERT INTO comentarios_asignaturas(id_comentario, id_asignatura)
+						VALUES('$sql_id_comentario', '$asignatura')";
+
+// $conexion->query($sql_comentarios_asignaturas);
 
 /**
 *Comprobamos que se realize el INSERT:
 */
-if($conexion->query($sql_comentarios)&&$conexion->query($sql_comentarios_asignaturas)){
+if($conexion->query($sql_comentarios_asignaturas)){
 	echo "<script>
 		alert('Comentario guardado, gracias por participar');
 		window.location.href='../maqueta/contenido0.html';
@@ -61,6 +67,7 @@ if($conexion->query($sql_comentarios)&&$conexion->query($sql_comentarios_asignat
 	</script>
 	";
 }
+
 $conexion->close();
 
 ?>
