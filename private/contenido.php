@@ -13,7 +13,7 @@
 include("conexion_foro.php");
 
 // $sql="SELECT * FROM  comentarios";
-$sql= "SELECT * FROM  comentarios INNER JOIN usuarios USING(id_usuario)";
+$sql= "SELECT * FROM  comentarios INNER JOIN usuarios USING(id_usuario) LIMIT 5";
 
 $filas = $conexion->query($sql);
 

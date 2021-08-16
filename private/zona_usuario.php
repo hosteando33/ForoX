@@ -38,7 +38,7 @@ session_start();
       <div id="cabecera" class="row">
         <!-- ZONA LOGO -->
         <div class="col">
-          <a href="mostrar.php" target="content">
+          <a href="contenido_usuario_logeado.php" target="content">
             <button id="logo"><h3>FOROX</h3></button>
           </a>
         </div>
@@ -70,7 +70,7 @@ session_start();
 
             <script type="text/javascript">
               $.post(
-                "private/buscador_de_comentarios.php",
+                "buscador_de_comentarios.php",
                 {},
                 function (retorno) {
                   $("#nombre_asignatura").append(retorno);
@@ -85,7 +85,7 @@ session_start();
 
         <!-- ZONA LOGIN/REGISTRO -->
         <div class="col">
-          <a href="zona de usuario aun por hacer :D" 
+          <a href="opciones_usuario.php" 
               target="content" 
               style="text-decoration:none">
             <button>
@@ -112,7 +112,7 @@ session_start();
           <iframe
             name="content"
             id="content"
-            src="mostrar.php">
+            src="contenido_usuario_logeado.php">
           </iframe>
         </div>
       </div>
