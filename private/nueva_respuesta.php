@@ -9,7 +9,9 @@
 
 <body>
 
-	<?php session_start(); ?>
+	<?php session_start(); 
+	$id_comentario = $_GET['id_comentario'];
+	?>
 
 	<form method="POST" action="preguntar_BBDD.php">
 		<table>
@@ -17,6 +19,12 @@
 				<td>
 					Autor:
 					<input id="input_autor" type="text" name="iautor" value=" <?php echo $_SESSION["nombre_usuario"]; ?>" disabled>
+					Id:
+					<p>
+						<?php
+						echo $id_comentario;
+						?>
+					</p>
 				</td>
 				<td colspan="2">
 					Titulo:
