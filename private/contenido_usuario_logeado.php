@@ -19,8 +19,6 @@
 
 	$filas = $conexion->query($sql);
 
-	//			style="border:2px solid blue;
-	//					border-radius:10px 10px 10px 10px;
 	foreach ($filas as $fila) {
 		echo '
 		<div class="comentario" id="comentario_' . $fila["id_comentario"] . '">
@@ -44,7 +42,7 @@
 
 				  	<form action="nueva_respuesta.php" method="GET">
     					<input name="id_comentario" type="hidden" value="' . $fila["id_comentario"] . '">
-    					<input type="submit" name="Responder">
+    					<input type="submit" value="Responder">
 					</form>
 					</td>
 				</tr>
@@ -54,40 +52,3 @@
 	}
 	?>
 
-	<!-- 
-	<a href="nueva_respuesta.php" ?id_comentario=' . $fila["id_comentario"] . ' target="content" style="text-decoration: none">
-		<button>Responde a la pregunta</button>
-	</a> -->
-
-
-
-	<!-- <form method="POST" action="comentar.php">
-	<table>
-		<tr class="tabla_encabezado">
-			<td>
-				autor:
-				<input id="input_autor" type="text" name="iautor" value="pedro">
-			</td>
-			<td colspan="2">
-				titulo:
-				<input id="input_titulo" type="text" name="ititulo">
-			</td>
-		</tr>
-		<tr class="tabla_etiqueta">
-			<td colspan="3">
-				etiquetas
-				<input id="input_etiqueta" type="text" name="ietiqueta">
-			</td>
-		</tr>
-		<tr class= "tabla_texto">
-			<td colspan="3"><textarea name="itexto"></textarea></td>
-		</tr>
-		<tr class="tabla_pie">
-			<td><input type="reset" value="borrar">	</td>
-			<td><input type="submit" value="compartir"></td>
-		</tr>
-	</table>
-</form>
-
-</body>
-</html> -->
