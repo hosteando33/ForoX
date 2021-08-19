@@ -41,10 +41,12 @@
 			?>
 
 		</div>
+		<p>Respuesta:</p>
 
 		<textarea name="itexto" id="input_respuesta" required></textarea>
 
 		<br>
+		<input name="id_comentario" type="hidden" value="<?php echo $id_comentario; ?>">
 
 		<input type="reset" value="Borrar">
 		<input type="submit" value="Responder" id="preguntar">
