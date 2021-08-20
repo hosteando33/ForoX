@@ -37,7 +37,7 @@ $sql_comentarios="INSERT INTO respuestas(texto_respuesta, id_usuario, id_comenta
 
 if($conexion->query($sql_comentarios)){
 	echo "<script>
-		alert('Comentario guardado, gracias por participar');
+		alert('Respuesta guardada, gracias por participar');
 		window.location.href='../maqueta/contenido0.html';
 	</script>
 	";

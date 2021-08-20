@@ -23,7 +23,24 @@
 
 	<form method="POST" action="responder_BBDD.php">
 
-		<div id= "texto_respuesta">
+		<div id= "titulo_pregunta">
+			<p>
+				Titulo:
+			</p>
+
+			<?php 
+			
+			foreach ($preguntas as $pregunta){
+				if ($pregunta["id_comentario"] == $id_comentario) {
+					echo $pregunta["titulo_comentario"];
+				}
+			};
+
+			?>
+
+		</div>
+
+		<div id= "texto_pregunta">
 			<p>
 				Pregunta:
 			</p>
@@ -36,7 +53,7 @@
 				}
 			};
 			
-			echo $pregunta["texto_comentario"];
+			// echo $pregunta["texto_comentario"];
 
 			?>
 
