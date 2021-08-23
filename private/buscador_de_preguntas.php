@@ -14,12 +14,15 @@
 	//hacemos disponible la variable $conexion
 	include("conexion_foro.php");
 
+	$asignatura = $_GET['id_asignatura'];
+
 	// $sql="SELECT * FROM  comentarios";
-	$sql= "SELECT * FROM  comentarios INNER JOIN usuarios USING(id_usuario) ORDER BY id_comentario DESC LIMIT 10";
+	$sql = "SELECT * FROM  comentarios INNER JOIN comentarios_asignaturas INNER JOIN asignaturas";
 
 	$filas = $conexion->query($sql);
 
 	foreach ($filas as $fila) {
+		if($asignatura == $fila['id_asignatura']){
 		echo '
 		<div class="comentario" id="comentario_' . $fila["id_comentario"] . '">
 			<table>
@@ -49,6 +52,6 @@
 			</table>
 		</div>
 		';
+		}
 	}
 	?>
-

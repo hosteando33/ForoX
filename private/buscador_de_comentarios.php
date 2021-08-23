@@ -1,6 +1,5 @@
 <?php
 
-
 include("conexion_foro.php");
 
 $sql_asignaturas= "SELECT * FROM asignaturas";
