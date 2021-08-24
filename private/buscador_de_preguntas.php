@@ -14,21 +14,21 @@
 	//hacemos disponible la variable $conexion
 	include("conexion_foro.php");
 
-	$asignatura = $_GET['id_asignatura'];
+	$id_asignatura = $_GET['id_asignatura'];
 
 	// $sql="SELECT * FROM  comentarios";
-	$sql = "SELECT * FROM  comentarios INNER JOIN comentarios_asignaturas INNER JOIN asignaturas";
+	$sql = "SELECT * FROM  comentarios INNER JOIN comentarios_asignaturas USING(id_comentario) INNER JOIN asignaturas USING(id_asignatura)";
 
 	$filas = $conexion->query($sql);
 
 	foreach ($filas as $fila) {
-		if($asignatura == $fila['id_asignatura']){
+		if($id_asignatura == $fila['id_asignatura']){
 		echo '
 		<div class="comentario" id="comentario_' . $fila["id_comentario"] . '">
 			<table>
 				<tr class="tabla_encabezado">
-					<td>autor: ' . $fila["nombre_usuario"] . ' </td>
-					<td colspan="2">' . $fila["titulo_comentario"] . '</td>
+					<td>' . $fila["titulo_comentario"] . '</td>
+					<td>' .$fila["nombre_asignatura"] . '</td>
 				</tr>
 				<tr class="tabla_etiqueta">
 					<td colspan="3">etiquetas</td>

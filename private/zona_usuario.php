@@ -63,7 +63,7 @@ session_start();
 
         <!-- ZONA FILTRO/BUSQUEDA -->
         <div class="col-6">
-          <form action="buscador_de_preguntas" method="POST">
+          <form action="buscador_de_preguntas.php" method="GET" target="content">
             <select id="nombre_asignatura" name="id_asignatura">
               <option>Asignaturas</option>
             </select>
