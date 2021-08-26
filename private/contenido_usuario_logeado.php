@@ -7,11 +7,6 @@
 
 	<script src="../maqueta/js/jquery-1.9.1.js"></script>
 
-	<script>
-		function ver_respuestas() {
-			$("#respuestas").toggle();
-		}
-	</script>
 </head>
 
 <body>
@@ -25,7 +20,11 @@
 	// $sql="SELECT * FROM  comentarios";
 	$sql = "SELECT * FROM  comentarios INNER JOIN usuarios USING(id_usuario) ORDER BY id_comentario DESC LIMIT 10";
 
+	$sql_respuestas = "SELECT * FROM respuestas INNER JOIN usuarios USING(id_usuario)";
+
 	$filas = $conexion->query($sql);
+
+	$respuestas = $conexion->query($sql_respuestas);
 
 	foreach ($filas as $fila) {
 		echo '
@@ -67,12 +66,31 @@
 
 					</td>
 				</tr>
-				<tr id="respuestas' . $fila["id_comentario"] . '" style="display: none">
-					<td colspan="3">
-					<div id="">Respuesta</div>
-					</td>
-				</tr>
+				
 			</table>
+
+		</div>
+
+		<div class="comentario" id="respuestas' . $fila["id_comentario"] . '" style="display: none">
+
+			<table>
+				<td colspan="3">
+				<div id="">
+				';
+
+				foreach($respuestas as $respuesta){
+					if($respuesta["id_comentario"] == $fila["id_comentario"]){
+						echo ' <div> '. $respuesta["texto_respuesta"] .' </div>';
+					}
+				}
+		echo'				
+				
+				
+				
+				</div>
+				</td>
+			</table>
+			
 		</div>
 		';
 	}
